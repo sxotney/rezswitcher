@@ -93,3 +93,7 @@ adb -s "$SHIELD" uninstall app.rezswitcher
 - `app/src/app/rezswitcher/core/` is pure Java (no Android imports) and holds all the decision logic. It's covered by `./test.sh` (JUnit 4, downloaded on first run).
 - The Android glue lives in `app/src/app/rezswitcher/`.
 - Testing on a device switches the TV's display mode, so do it with someone watching the screen.
+
+## Licence
+
+MIT. See [`LICENSE`](LICENSE).
