@@ -3,7 +3,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 [ -f "$ROOT/.env" ] && . "$ROOT/.env"
-D="${SHIELD:?Set SHIELD to your Shield's adb address, e.g. export SHIELD=192.168.1.50:5555 (or copy .env.example to .env)}"
+D="${SHIELD:?Set SHIELD to the Shield adb address, e.g. export SHIELD=192.168.1.50:5555 (or copy .env.example to .env)}"
 PKG="$1"
 adb -s "$D" shell dumpsys SurfaceFlinger --list </dev/null | tr -d '\r' \
   | grep -E "$PKG" | grep -vE "Background|ActivityRecord|Bounds|^[0-9a-f]+ " > /tmp/framepace.$$
